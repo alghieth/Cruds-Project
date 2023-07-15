@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUDS</title>
+    <link rel="stylesheet" href="css/main.css">
+</head>
+<body class="night-mood">
+    <div class="crud">
+        <div class="head">
+            <h2>CRUDS</h2>
+            <p>product management system</p>
+            <div class="mood-div">
+                <button onclick="reset()" id="reset">Reset</button>
+                <p id="ln-label">Light Mood</p>
+                <input style="display: none;" type="checkbox" id="dark-mood">
+                <label id="mood-btn" for="dark-mood"></label>
+            </div>
+        </div>
+        <div class="inputs"> 
+            <input class="night-mood" type="text" id="title" placeholder="title">
+            <div class="price night-mood">
+                <input class="night-mood" onkeyup="getTotal()" type="number" id="price" placeholder="price">
+                <input class="night-mood" onkeyup="getTotal()" type="number" id="taxes" placeholder="taxes">
+                <input class="night-mood" onkeyup="getTotal()" type="number" id="ads" placeholder="ads">
+                <input class="night-mood" onkeyup="getTotal()" type="number" id="discount" placeholder="discount">
+                <div id="totalDiv"><small id="total"></small></div>
+            </div>
+            <input class="night-mood" type="number" id="count" placeholder="count">
+            <input class="night-mood" type="text" id="category" placeholder="category">
+            <button class="night-mood" id="submit">Create</button>
+        </div>
+        <div class="outputs">
+            <div class="searchBlock">
+                <input class="night-mood" onkeyup="searchData(this.value)" type="text" id="search" placeholder="Search">
+                <div class="btnSearch">
+                    <button onclick="getSearchMood(this.id)" id="searchTitle">Search By Title</button>
+                    <button onclick="getSearchMood(this.id)" id="searchCategory">Search By Category</button>
+                </div>
+                <div id="deleteAll">
+                </div>
+                <div class="responsive-table">
+                    <table>
+                        <tr>
+                            <th>Id</th>
+                            <th>titel</th>
+                            <th>price</th>
+                            <th>taxes</th>
+                            <th>ads</th>
+                            <th>discount</th>
+                            <th>Total</th>
+                            <th>category</th>
+                            <th>update</th>
+                            <th>delete</th>
+                        </tr>
+                        <tbody id="tbody"></tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="js/main.js"></script>
+</body>
+</html>
